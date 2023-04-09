@@ -8,6 +8,7 @@
 Antylopa::Antylopa(World *currentWorld, int positionX, int positionY, int age)
     : Animal(currentWorld, ANTYLOPA_STRENGTH, ANTYLOPA_INITIATIVE, positionX, positionY, age) {
     skin = ANTYLOPA_SKIN;
+    name = ANTYLOPA_NAME;
 }
 
 void Antylopa::Action() {
@@ -62,21 +63,66 @@ void Antylopa::Action() {
     }
 
     if(tempPosition[0] != position[0] || tempPosition[1] != position[1]) {
-        if(currentWorld->Organisms[tempPosition[1]][tempPosition[0]] != nullptr) {
-            currentWorld->Organisms[tempPosition[1]][tempPosition[0]]->Collision(this);
+        if(currentWorld->getOrganism(tempPosition[0],tempPosition[1]) != nullptr) {
+            currentWorld->getOrganism(tempPosition[0],tempPosition[1])->Collision(this);
         }
         else {
-            currentWorld->Organisms[position[1]][position[0]] = nullptr;
-            position[0] = tempPosition[0];
-            position[1] = tempPosition[1];
-            currentWorld->Organisms[position[1]][position[0]] = this;
+            currentWorld->moveOrganism(this, tempPosition[0], tempPosition[1]);
         }
     }
-
 }
 
 void Antylopa::Collision(Organism *otherOrganism) {
-
+    if(otherOrganism->getStrength() < this->getStrength()) {
+        std::cout<<"Zwierze: "<<this->getName()<<" zjadlo: "<<otherOrganism->getName()<<std::endl;
+        otherOrganism->setIsAlive(false);
+        currentWorld->removeOrganism(otherOrganism);
+        if(otherOrganism->getName() == CZLOWIEK_NAME){
+            currentWorld->setGameStatus(false);
+        }
+    }
+    else {
+        if(rand() % 2 == 0) {
+            std::cout << "Zwierze: " << this->getName() << " zostalo zjedzone przez: " << otherOrganism->getName()<< std::endl;
+            currentWorld->moveOrganism(otherOrganism, this->getX(), this->getY());
+            this->setIsAlive(false);
+        }
+        else{
+            std::cout << "Zwierze: " << this->getName() << " ucieklo przed: " << otherOrganism->getName()<< std::endl;
+            currentWorld->moveOrganism(otherOrganism, this->getX(), this->getY());
+            int position = this->currentWorld->returnEmptyPositionAround(this->getX(), this->getY());
+            switch(position){
+                case 1:
+                    this->currentWorld->escapeToPosition(this, this->getX()+1, this->getY());
+//                    this->currentWorld->Organisms[this->getY()][this->getX()+1] = this;
+//                    this->setX(this->getX()+1);
+//                    this->setY(this->getY());
+                    break;
+                case 2:
+                    this->currentWorld->escapeToPosition(this, this->getX(), this->getY()-1);
+//                    this->currentWorld->Organisms[this->getY()][this->getX()-1] = this;
+//                    this->setX(this->getX()-1);
+//                    this->setY(this->getY());
+                    break;
+                case 3:
+                    this->currentWorld->escapeToPosition(this, this->getX(), this->getY()+1);
+//                    this->currentWorld->Organisms[this->getY()+1][this->getX()] = this;
+//                    this->setX(this->getX());
+//                    this->setY(this->getY()+1);
+                    break;
+                case 4:
+                    this->currentWorld->escapeToPosition(this, this->getX(), this->getY()-1);
+//                    this->currentWorld->Organisms[this->getY()-1][this->getX()] = this;
+//                    this->setX(this->getX());
+//                    this->setY(this->getY()-1);
+                    break;
+                case 5:
+                    std::cout << "Zwierze: " << otherOrganism->getName() << " dopadlo: " << this->getName()<< std::endl;
+                    this->setIsAlive(false);
+                    break;
+            }
+        }
+    }
 }
 
 

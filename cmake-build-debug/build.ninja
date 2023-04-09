@@ -103,6 +103,48 @@ build CMakeFiles/untitled.dir/Plants/Mlecz.cpp.obj: CXX_COMPILER__untitled_Debug
   OBJECT_DIR = CMakeFiles\untitled.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Plants
 
+build CMakeFiles/untitled.dir/Plants/Guarana.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Plants/Guarana.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Plants\Guarana.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Plants
+
+build CMakeFiles/untitled.dir/Plants/Jagody.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Plants/Jagody.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Plants\Jagody.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Plants
+
+build CMakeFiles/untitled.dir/Plants/Barszcz.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Plants/Barszcz.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Plants\Barszcz.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Plants
+
+build CMakeFiles/untitled.dir/Animals/Wilk.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Animals/Wilk.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Animals\Wilk.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Animals
+
+build CMakeFiles/untitled.dir/Animals/Lis.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Animals/Lis.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Animals\Lis.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Animals
+
+build CMakeFiles/untitled.dir/Animals/Zolw.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Animals/Zolw.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Animals\Zolw.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Animals
+
+build CMakeFiles/untitled.dir/Animals/Owca.cpp.obj: CXX_COMPILER__untitled_Debug C$:/Users/szymo/CLionProjects/untitled/Animals/Owca.cpp || cmake_object_order_depends_target_untitled
+  DEP_FILE = CMakeFiles\untitled.dir\Animals\Owca.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\untitled.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled.dir\Animals
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled
@@ -111,7 +153,7 @@ build CMakeFiles/untitled.dir/Plants/Mlecz.cpp.obj: CXX_COMPILER__untitled_Debug
 #############################################
 # Link the executable untitled.exe
 
-build untitled.exe: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.obj CMakeFiles/untitled.dir/World.cpp.obj CMakeFiles/untitled.dir/Organism.cpp.obj CMakeFiles/untitled.dir/Animals/Animal.cpp.obj CMakeFiles/untitled.dir/Animals/Czlowiek.cpp.obj CMakeFiles/untitled.dir/Animals/Antylopa.cpp.obj CMakeFiles/untitled.dir/Plants/Trawa.cpp.obj CMakeFiles/untitled.dir/Plants/Plant.cpp.obj CMakeFiles/untitled.dir/Plants/Mlecz.cpp.obj
+build untitled.exe: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.obj CMakeFiles/untitled.dir/World.cpp.obj CMakeFiles/untitled.dir/Organism.cpp.obj CMakeFiles/untitled.dir/Animals/Animal.cpp.obj CMakeFiles/untitled.dir/Animals/Czlowiek.cpp.obj CMakeFiles/untitled.dir/Animals/Antylopa.cpp.obj CMakeFiles/untitled.dir/Plants/Trawa.cpp.obj CMakeFiles/untitled.dir/Plants/Plant.cpp.obj CMakeFiles/untitled.dir/Plants/Mlecz.cpp.obj CMakeFiles/untitled.dir/Plants/Guarana.cpp.obj CMakeFiles/untitled.dir/Plants/Jagody.cpp.obj CMakeFiles/untitled.dir/Plants/Barszcz.cpp.obj CMakeFiles/untitled.dir/Animals/Wilk.cpp.obj CMakeFiles/untitled.dir/Animals/Lis.cpp.obj CMakeFiles/untitled.dir/Animals/Zolw.cpp.obj CMakeFiles/untitled.dir/Animals/Owca.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled.dir

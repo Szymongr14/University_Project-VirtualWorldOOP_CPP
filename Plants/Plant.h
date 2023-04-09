@@ -8,12 +8,10 @@
 
 class Plant : public Organism{
 public:
-    Plant(World *currentWorld, int positionX, int positionY);
-    Plant(World *currentWorld, int positionX, int positionY, Plant *newOrganism);
+    Plant(World *currentWorld, int positionX, int positionY, int strength);
     void Action() override;
     void Collision(Organism *otherOrganism) override;
-private:
-    Plant *newOrganism;
+    ~Plant() override = default;
 };
 
 

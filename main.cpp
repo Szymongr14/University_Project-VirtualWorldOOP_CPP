@@ -1,6 +1,7 @@
 #include <iostream>
 #include "World.h"
 
+
 using namespace std;
 
 void initalizeNewWorld() {
@@ -17,7 +18,14 @@ void initalizeNewWorld() {
         system("cls");
         nowySwiat.drawWorld();
         nowySwiat.makeTurn();
+        //aby przejsc dalej kliknij enter
+        std::cout<<std::endl;
+        system("echo Nacisnij Enter, aby przejsc do nastepnej tury... & pause > null");
     }
+    system("cls");
+    nowySwiat.drawWorld();
+    cout <<endl<< "\033[31mKoniec gry - czlowiek nie zyje\033[0m" << endl;
+    system("echo Nacisnij Enter, aby przejsc do menu... & pause > null");
 }
 
 
@@ -26,7 +34,7 @@ void initalizeNewWorld() {
 int main() {
     char zn;
     do {
-
+        system("cls");
         cout<<("-----------------------------------")<<endl;
         cout<<("|    Szymon Groszkowski 193141    |")<<endl;
         cout<<("|      Sterowanie: strzalki       |")<<endl;
@@ -47,6 +55,5 @@ int main() {
         }
     } while (zn != 'q');
 
-    std::cin.get();
     return 0;
 }

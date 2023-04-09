@@ -4,7 +4,7 @@ Organism::Organism(World *currentWorld, int strength, int initiative, int positi
     : currentWorld(currentWorld), strength(strength), initiative(initiative), position{positionX, positionY}, age(age) {
 }
 
-char Organism::draw() const {
+std::string Organism::draw() const {
     return skin;
 }
 
@@ -39,4 +39,21 @@ int Organism::getAge() const {
 void Organism::increaseAge() {
     this->age += age;
 }
+
+std::string Organism::getName() {
+    return name;
+}
+
+void Organism::setIsAlive(bool dead) {
+    this->isAlive = dead;
+}
+
+bool Organism::getIsAlive() const {
+    return isAlive;
+}
+
+void Organism::setStrength(int strength_value) {
+    this->strength = strength_value;
+}
+
 

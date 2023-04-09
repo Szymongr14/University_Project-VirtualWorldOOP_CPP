@@ -5,12 +5,14 @@
 #include "Mlecz.h"
 
 Mlecz::Mlecz(World *currentWorld, int positionX, int positionY)
-    : Plant(currentWorld, positionX, positionY) {
+    : Plant(currentWorld, positionX, positionY,MLECZ_STRENGTH) {
     skin = MLECZ_SKIN;
+    name = MLECZ_NAME;
 }
 
 void Mlecz::Action() {
-    Plant::Action();
+    for(int i = 0; i < 3; i++)
+        Plant::Action();
 }
 
 void Mlecz::Collision(Organism *otherOrganism) {

@@ -8,7 +8,10 @@
 
 #include "Animal.h"
 
+
 class Czlowiek : public Animal{
+private:
+        int abilityTime = 0;
 public:
     Czlowiek(World *currentWorld, int positionX, int positionY, int age);
     void Action() override;

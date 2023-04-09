@@ -60,7 +60,14 @@
 				9,
 				11,
 				13,
-				15
+				15,
+				17,
+				19,
+				21,
+				23,
+				25,
+				27,
+				29
 			]
 		}
 	],
@@ -105,7 +112,14 @@
 				9,
 				11,
 				13,
-				15
+				15,
+				17,
+				19,
+				21,
+				23,
+				25,
+				27,
+				29
 			]
 		},
 		{
@@ -119,7 +133,14 @@
 				10,
 				12,
 				14,
-				16
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30
 			]
 		}
 	],
@@ -217,6 +238,83 @@
 		{
 			"backtrace" : 1,
 			"path" : "Plants/Mlecz.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Plants/Guarana.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Plants/Guarana.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Plants/Jagody.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Plants/Jagody.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Plants/Barszcz.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Plants/Barszcz.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Animals/Wilk.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Animals/Wilk.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Animals/Lis.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Animals/Lis.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Animals/Zolw.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Animals/Zolw.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Animals/Owca.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Animals/Owca.h",
 			"sourceGroupIndex" : 1
 		}
 	],
