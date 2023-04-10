@@ -17,7 +17,12 @@ void Zolw::Action() {
 }
 
 void Zolw::Collision(Organism *otherOrganism) {
-    if(otherOrganism->getStrength() < this->getStrength()) {
+
+    if(otherOrganism->getName()==ZOLW_NAME){
+        Animal *newAnimal = new Zolw(currentWorld, this->getX(), this->getY(), 1);
+        this->CollisionWithTheSameSpecies(newAnimal);
+    }
+    else if(otherOrganism->getStrength() < this->getStrength()) {
         std::cout<<"Zwierze: "<<this->getName()<<" zjadlo: "<<otherOrganism->getName()<<std::endl;
         otherOrganism->setIsAlive(false);
         currentWorld->removeOrganism(otherOrganism);

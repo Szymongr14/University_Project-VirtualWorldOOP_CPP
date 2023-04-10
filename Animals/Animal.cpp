@@ -59,3 +59,35 @@ void Animal::Collision(Organism *otherOrganism) {
 Animal::Animal(World *currentWorld, int strength, int initiative, int positionX, int positionY, int age)
     : Organism(currentWorld, strength, initiative, positionX, positionY, age) {
 }
+
+void Animal::CollisionWithTheSameSpecies(Organism *organismToCreate) {
+    std::cout<<"Powstal nowy/a: "<<this->getName()<<std::endl;
+    int position = this->currentWorld->returnEmptyPositionAround(this->getX(), this->getY());
+    //Animal * newAnimal = new Lis(this->currentWorld, this->getX(), this->getY(), 1);
+    switch(position) {
+        case 1:
+            organismToCreate->setX(this->getX() + 1);
+            organismToCreate->setY(this->getY());
+            this->currentWorld->addOrganism(organismToCreate, this->getX() + 1, this->getY());
+            break;
+        case 2:
+            organismToCreate->setX(this->getX() - 1);
+            organismToCreate->setY(this->getY());
+            this->currentWorld->addOrganism(organismToCreate, this->getX() - 1, this->getY());
+            break;
+        case 3:
+            organismToCreate->setX(this->getX());
+            organismToCreate->setY(this->getY() + 1);
+            this->currentWorld->addOrganism(organismToCreate, this->getX(), this->getY() + 1);
+            break;
+        case 4:
+            organismToCreate->setX(this->getX());
+            organismToCreate->setY(this->getY() - 1);
+            this->currentWorld->addOrganism(organismToCreate, this->getX(), this->getY() - 1);
+            break;
+        case 5:
+            std::cout << "Mlody/a: " << this->getName() << " nie przetrwal/a :(" << std::endl;
+            delete organismToCreate;
+            break;
+    }
+}

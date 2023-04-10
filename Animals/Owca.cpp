@@ -15,5 +15,10 @@ void Owca::Action() {
 }
 
 void Owca::Collision(Organism *otherOrganism) {
-    Animal::Collision(otherOrganism);
+    if(otherOrganism->getName()==OWCA_NAME){
+        Animal *newAnimal = new Owca(currentWorld, this->getX(), this->getY(), 1);
+        this->CollisionWithTheSameSpecies(newAnimal);
+    }
+    else
+        Animal::Collision(otherOrganism);
 }

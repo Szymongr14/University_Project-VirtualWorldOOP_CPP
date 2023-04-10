@@ -73,7 +73,11 @@ void Antylopa::Action() {
 }
 
 void Antylopa::Collision(Organism *otherOrganism) {
-    if(otherOrganism->getStrength() < this->getStrength()) {
+    if(otherOrganism->getName()==ANTYLOPA_NAME){
+        Animal *newAnimal = new Antylopa(currentWorld, this->getX(), this->getY(), 1);
+        this->CollisionWithTheSameSpecies(newAnimal);
+    }
+    else if(otherOrganism->getStrength() < this->getStrength()) {
         std::cout<<"Zwierze: "<<this->getName()<<" zjadlo: "<<otherOrganism->getName()<<std::endl;
         otherOrganism->setIsAlive(false);
         currentWorld->removeOrganism(otherOrganism);
@@ -94,27 +98,15 @@ void Antylopa::Collision(Organism *otherOrganism) {
             switch(position){
                 case 1:
                     this->currentWorld->escapeToPosition(this, this->getX()+1, this->getY());
-//                    this->currentWorld->Organisms[this->getY()][this->getX()+1] = this;
-//                    this->setX(this->getX()+1);
-//                    this->setY(this->getY());
                     break;
                 case 2:
                     this->currentWorld->escapeToPosition(this, this->getX(), this->getY()-1);
-//                    this->currentWorld->Organisms[this->getY()][this->getX()-1] = this;
-//                    this->setX(this->getX()-1);
-//                    this->setY(this->getY());
                     break;
                 case 3:
                     this->currentWorld->escapeToPosition(this, this->getX(), this->getY()+1);
-//                    this->currentWorld->Organisms[this->getY()+1][this->getX()] = this;
-//                    this->setX(this->getX());
-//                    this->setY(this->getY()+1);
                     break;
                 case 4:
                     this->currentWorld->escapeToPosition(this, this->getX(), this->getY()-1);
-//                    this->currentWorld->Organisms[this->getY()-1][this->getX()] = this;
-//                    this->setX(this->getX());
-//                    this->setY(this->getY()-1);
                     break;
                 case 5:
                     std::cout << "Zwierze: " << otherOrganism->getName() << " dopadlo: " << this->getName()<< std::endl;

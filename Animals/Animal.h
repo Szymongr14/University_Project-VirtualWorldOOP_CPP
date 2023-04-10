@@ -10,6 +10,7 @@ public:
     void Action() override;
     void Collision(Organism *otherOrganism) override;
     ~Animal() override = default;
+    void CollisionWithTheSameSpecies(Organism *otherOrganism);
 };
 
 

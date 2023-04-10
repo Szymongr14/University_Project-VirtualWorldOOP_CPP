@@ -5,7 +5,7 @@
 #include "Guarana.h"
 
 Guarana::Guarana(World *currentWorld, int positionX, int positionY)
-    : Plant(currentWorld, positionX, positionY,BARSZCZ_STRENGTH) {
+    : Plant(currentWorld, positionX, positionY,GUARANA_STRENGTH) {
     skin = GUARANA_SKIN;
     name = GUARANA_NAME;
 }
@@ -15,5 +15,6 @@ void Guarana::Action() {
 }
 
 void Guarana::Collision(Organism *otherOrganism) {
+    otherOrganism->setStrength(otherOrganism->getStrength()+3);
     Plant::Collision(otherOrganism);
 }

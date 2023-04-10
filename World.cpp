@@ -26,7 +26,7 @@ World::World(int height, int width)
     for(int i = 0; i < 2; i++) {
         placeRandomOnPosition(new Antylopa(this, -1, -1, 7));
         placeRandomOnPosition(new Lis(this, -1, -1, 7));
-//        placeRandomOnPosition(new Wilk(this, -1, -1, 9));
+        placeRandomOnPosition(new Wilk(this, -1, -1, 9));
         placeRandomOnPosition(new Zolw(this, -1, -1, 40));
         placeRandomOnPosition(new Owca(this, -1, -1, 4));
     }

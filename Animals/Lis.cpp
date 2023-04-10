@@ -42,5 +42,10 @@ void Lis::Action() {
 }
 
 void Lis::Collision(Organism *otherOrganism) {
-    Animal::Collision(otherOrganism);
+    if(otherOrganism->getName()==LIS_NAME){
+        Animal *newAnimal = new Lis(currentWorld, this->getX(), this->getY(), 1);
+        this->CollisionWithTheSameSpecies(newAnimal);
+    }
+    else
+        Animal::Collision(otherOrganism);
 }
