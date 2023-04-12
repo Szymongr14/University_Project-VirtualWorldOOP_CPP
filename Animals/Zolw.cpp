@@ -18,9 +18,10 @@ void Zolw::Action() {
 
 void Zolw::Collision(Organism *otherOrganism) {
 
-    if(otherOrganism->getName()==ZOLW_NAME){
-        Animal *newAnimal = new Zolw(currentWorld, this->getX(), this->getY(), 1);
+    if(typeid(*this) == typeid(*otherOrganism)){
+        Organism *newAnimal = this->clone();
         this->CollisionWithTheSameSpecies(newAnimal);
+        return;
     }
     else if(otherOrganism->getStrength() < this->getStrength()) {
         std::cout<<"Zwierze: "<<this->getName()<<" zjadlo: "<<otherOrganism->getName()<<std::endl;
@@ -39,4 +40,8 @@ void Zolw::Collision(Organism *otherOrganism) {
         else
             std::cout<<"Zwierze: "<<this->getName()<<" odparl atak: "<<otherOrganism->getName()<<std::endl;
     }
+}
+
+Organism *Zolw::clone() {
+    return new Zolw(currentWorld, this->getX(), this->getY(), 1);
 }

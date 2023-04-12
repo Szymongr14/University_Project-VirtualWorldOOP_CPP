@@ -72,10 +72,12 @@ void Antylopa::Action() {
     }
 }
 
+
 void Antylopa::Collision(Organism *otherOrganism) {
-    if(otherOrganism->getName()==ANTYLOPA_NAME){
-        Animal *newAnimal = new Antylopa(currentWorld, this->getX(), this->getY(), 1);
+    if(typeid(*this) == typeid(*otherOrganism)){
+        Organism *newAnimal = this->clone();
         this->CollisionWithTheSameSpecies(newAnimal);
+        return;
     }
     else if(otherOrganism->getStrength() < this->getStrength()) {
         std::cout<<"Zwierze: "<<this->getName()<<" zjadlo: "<<otherOrganism->getName()<<std::endl;
@@ -117,4 +119,7 @@ void Antylopa::Collision(Organism *otherOrganism) {
     }
 }
 
+Organism *Antylopa::clone() {
+    return new Antylopa(currentWorld, this->getX(), this->getY(), 1);
+}
 

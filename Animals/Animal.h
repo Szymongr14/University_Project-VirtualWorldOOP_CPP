@@ -11,6 +11,7 @@ public:
     void Collision(Organism *otherOrganism) override;
     ~Animal() override = default;
     void CollisionWithTheSameSpecies(Organism *otherOrganism);
+    virtual Organism * clone() = 0;
 };
 
 

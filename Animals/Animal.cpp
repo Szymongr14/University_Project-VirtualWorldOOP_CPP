@@ -34,7 +34,12 @@ void Animal::Action() {
 }
 
 void Animal::Collision(Organism *otherOrganism) {
-    if(otherOrganism->getStrength() < this->getStrength()) {
+    if(typeid(*this) == typeid(*otherOrganism)){
+        Organism *newAnimal = this->clone();
+        this->CollisionWithTheSameSpecies(newAnimal);
+        return;
+    }
+    else if(otherOrganism->getStrength() < this->getStrength()) {
         std::cout<<"Zwierze: "<<this->getName()<<" zjadlo: "<<otherOrganism->getName()<<std::endl;
         otherOrganism->setIsAlive(false);
         currentWorld->removeOrganism(otherOrganism);
@@ -45,10 +50,6 @@ void Animal::Collision(Organism *otherOrganism) {
     else {
         std::cout<<"Zwierze: "<<this->getName()<<" zostalo zjedzone przez: "<<otherOrganism->getName()<<std::endl;
         this->currentWorld->moveOrganism(otherOrganism, this->getX(), this->getY());
-//        this->currentWorld->Organisms[this->getY()][this->getX()] = otherOrganism;
-//        this->currentWorld->Organisms[otherOrganism->getY()][otherOrganism->getX()] = nullptr;
-//        otherOrganism->setX(this->getX());
-//        otherOrganism->setY(this->getY());
         this->setIsAlive(false);
         if(this->getName() == CZLOWIEK_NAME){
             currentWorld->setGameStatus(false);
@@ -63,7 +64,6 @@ Animal::Animal(World *currentWorld, int strength, int initiative, int positionX,
 void Animal::CollisionWithTheSameSpecies(Organism *organismToCreate) {
     std::cout<<"Powstal nowy/a: "<<this->getName()<<std::endl;
     int position = this->currentWorld->returnEmptyPositionAround(this->getX(), this->getY());
-    //Animal * newAnimal = new Lis(this->currentWorld, this->getX(), this->getY(), 1);
     switch(position) {
         case 1:
             organismToCreate->setX(this->getX() + 1);

@@ -15,10 +15,9 @@ void Wilk::Action() {
 }
 
 void Wilk::Collision(Organism *otherOrganism) {
-    if(otherOrganism->getName()==WILK_NAME){
-        Animal *newAnimal = new Wilk(currentWorld, this->getX(), this->getY(), 1);
-        this->CollisionWithTheSameSpecies(newAnimal);
-    }
-    else
     Animal::Collision(otherOrganism);
+}
+
+Organism *Wilk::clone() {
+    return new Wilk(currentWorld, this->getX(), this->getY(), 1);
 }

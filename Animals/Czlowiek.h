@@ -16,6 +16,7 @@ public:
     Czlowiek(World *currentWorld, int positionX, int positionY, int age);
     void Action() override;
     void Collision(Organism *otherOrganism) override;
+    Organism * clone()override{ return nullptr; };
 };
 
 
