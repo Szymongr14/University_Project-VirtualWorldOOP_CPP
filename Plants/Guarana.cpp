@@ -8,7 +8,10 @@ Guarana::Guarana(World *currentWorld, int positionX, int positionY)
     : Plant(currentWorld, positionX, positionY,GUARANA_STRENGTH) {
     skin = GUARANA_SKIN;
     name = GUARANA_NAME;
+    name_without_color = GUARANA_NORMAL_NAME;
 }
+
+
 
 void Guarana::Action() {
     Plant::Action();

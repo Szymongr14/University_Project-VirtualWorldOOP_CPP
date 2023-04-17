@@ -13,10 +13,13 @@ class World {
 private:
     int height, width, turn = 1,cooldown=0;
     bool game_status = true;
+    int humanAbilityTime = 0;
     std::vector<std::vector<Organism*>> Organisms;
     std::vector<std::vector<std::string>> Board;
 public:
     World(int height, int width);
+    //constructor for loading world from file
+    World(const char * fileName);
 
     void drawWorld();
 
@@ -25,6 +28,10 @@ public:
     void setGameStatus(bool status);
 
     bool getGameStatus() const;
+
+    int getHumanAbilityTime() const;
+
+    void setHumanAbilityTime(int humanAbilityTime);
 
     void makeTurn();
 
@@ -49,5 +56,10 @@ public:
     int returnEmptyPositionAround(int x, int y);
 
     void escapeToPosition(Organism *organism, int x, int y);
+
+    void saveWorld(const char *fileName);
+    void placeOnPosition(Organism *organism, int x, int y);
+
+    void updateBoard();
 };
 #endif //OBIEKTOWECPP_WORLD_H

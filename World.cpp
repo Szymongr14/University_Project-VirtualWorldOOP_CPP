@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <fstream>
 #include "World.h"
 #include "Animals/Czlowiek.h"
 #include "Animals/Antylopa.h"
@@ -41,6 +42,90 @@ World::World(int height, int width)
     placeRandomOnPosition(new Barszcz(this, -1, -1));
     placeRandomOnPosition(new Jagody(this, -1, -1));
 }
+
+World::World(const char * fileName) {
+    srand(time(nullptr));
+    std::ifstream worldSave;
+    worldSave.open(fileName, std::ios::in);
+    std::cout<< "Loading world from file: " << fileName << std::endl;
+    worldSave>> this->height;
+    worldSave>> this->width;
+    worldSave>> this->turn;
+    worldSave>> this->cooldown;
+    worldSave>> this->humanAbilityTime;
+
+    Organisms.resize(height);
+    Board.resize(height);
+    for (int i = 0; i < height; i++) {
+        Organisms[i].resize(width, nullptr);
+        Board[i].resize(width, "-");
+    }
+
+    std::string name;
+    int strength_val, initiative_val, age_val, positionX_val,positionY_val;
+
+
+    while (worldSave >> name >> strength_val >> initiative_val >> positionX_val >> positionY_val >> age_val) {
+        if(name==CZLOWIEK_NORMAL_NAME){
+            placeOnPosition(new Czlowiek(this, strength_val, initiative_val, positionX_val, positionY_val, age_val), positionX_val, positionY_val);
+        }
+        else if(name==ANTYLOPA_NORMAL_NAME){
+            placeOnPosition(new Antylopa(this, strength_val, initiative_val, positionX_val, positionY_val, age_val), positionX_val, positionY_val);
+        }
+        else if(name==LIS_NORMAL_NAME){
+            placeOnPosition(new Lis(this, strength_val, initiative_val, positionX_val, positionY_val, age_val), positionX_val, positionY_val);
+        }
+        else if(name==WILK_NORMAL_NAME){
+            placeOnPosition(new Wilk(this, strength_val, initiative_val, positionX_val, positionY_val, age_val), positionX_val, positionY_val);
+        }
+        else if(name==ZOLW_NORMAL_NAME){
+            placeOnPosition(new Zolw(this, strength_val, initiative_val, positionX_val, positionY_val, age_val), positionX_val, positionY_val);
+        }
+        else if(name==OWCA_NORMAL_NAME){
+            placeOnPosition(new Owca(this, strength_val, initiative_val, positionX_val, positionY_val, age_val), positionX_val, positionY_val);
+        }
+        else if(name==TRAWA_NORMAL_NAME){
+            placeOnPosition(new Trawa(this,positionX_val, positionY_val), positionX_val, positionY_val);
+        }
+        else if(name==MLECZ_NORMAL_NAME){
+            placeOnPosition(new Mlecz(this,positionX_val, positionY_val), positionX_val, positionY_val);
+        }
+        else if(name==GUARANA_NORMAL_NAME){
+            placeOnPosition(new Guarana(this, positionX_val, positionY_val), positionX_val, positionY_val);
+        }
+        else if(name==BARSZCZ_NORMAL_NAME){
+            placeOnPosition(new Barszcz(this,positionX_val, positionY_val), positionX_val, positionY_val);
+        }
+    }
+
+    worldSave.close();
+    updateBoard();
+}
+
+
+void World::saveWorld(const char *fileName) {
+    std::ofstream worldSave;
+    worldSave.open(fileName, std::ios::out);
+    std::cout<< "Saving world to file: " << fileName << std::endl;
+
+    worldSave<<this->height<<std::endl;
+    worldSave<<this->width<<std::endl;
+    worldSave<<this->turn<<std::endl;
+    worldSave<<this->cooldown<<std::endl;
+    worldSave<<this->humanAbilityTime<<std::endl;
+
+    for(int i = 0; i < height; i++) {
+        for(int j = 0; j < width; j++) {
+            if(Organisms[i][j] != nullptr) {
+                worldSave<<Organisms[i][j]->getNameWithoutColor()<<" "<<Organisms[i][j]->getStrength()<<" "<<Organisms[i][j]->getInitiative()<<" "<<Organisms[i][j]->getX()<<" "<<Organisms[i][j]->getY()<<" "<<Organisms[i][j]->getAge()<<std::endl;
+            }
+        }
+    }
+
+    std::cout<< "Game has been successfully saved to file:  " << fileName << std::endl;
+    worldSave.close();
+}
+
 
 bool World::getGameStatus() const {
     return game_status;
@@ -135,16 +220,7 @@ void World::makeTurn() {
     organisms.clear();
     toBeDeleted.clear();
 
-    // Update Board with Organisms
-    for(int i = 0; i < height; i++) {
-        for(int j = 0; j < width; j++) {
-            if(this->Organisms[i][j] != nullptr) {
-                this->Board[i][j] = this->Organisms[i][j]->draw();
-            }
-            else
-                this->Board[i][j] = '-';
-        }
-    }
+   updateBoard();
 
 }
 
@@ -219,3 +295,34 @@ void World::escapeToPosition(Organism *organism, int x, int y) {
 Organism *World::getOrganism(int x, int y) {
     return this->Organisms[y][x];
 }
+
+int World::getHumanAbilityTime() const {
+    return humanAbilityTime;
+}
+
+void World::setHumanAbilityTime(int humanAbilityTime) {
+    World::humanAbilityTime = humanAbilityTime;
+}
+
+void World::placeOnPosition(Organism *organism, int x, int y) {
+    this->Organisms[y][x] = organism;
+    organism->setX(x);
+    organism->setY(y);
+}
+
+void World::updateBoard() {
+    // Update Board with Organisms
+    for(int i = 0; i < height; i++) {
+        for(int j = 0; j < width; j++) {
+            if(this->Organisms[i][j] != nullptr) {
+                this->Board[i][j] = this->Organisms[i][j]->draw();
+            }
+            else
+                this->Board[i][j] = '-';
+        }
+    }
+}
+
+
+
+

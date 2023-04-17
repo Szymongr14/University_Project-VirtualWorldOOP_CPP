@@ -8,6 +8,7 @@ Lis::Lis(World *currentWorld, int positionX, int positionY, int age)
     : Animal(currentWorld, LIS_STRENGTH, LIS_INITIATIVE, positionX, positionY, age) {
     skin = LIS_SKIN;
     name = LIS_NAME;
+    name_without_color = LIS_NORMAL_NAME;
 }
 
 void Lis::Action() {
@@ -35,7 +36,7 @@ void Lis::Action() {
             }
         }
         else {
-            std::cout<<"Ruch zwierzecia: "<<this->getName() << std::endl;
+            //std::cout<<"Ruch zwierzecia: "<<this->getName() << std::endl;
             currentWorld->moveOrganism(this, tempPosition[0], tempPosition[1]);
         }
     }
@@ -47,4 +48,11 @@ void Lis::Collision(Organism *otherOrganism) {
 
 Organism *Lis::clone() {
     return new Lis(currentWorld, this->getX(), this->getY(), 1);
+}
+
+Lis::Lis(World *currentWorld, int initative, int strength, int positionX, int positionY, int age)
+    : Animal(currentWorld, strength, initative, positionX, positionY, age) {
+    skin = LIS_SKIN;
+    name = LIS_NAME;
+    name_without_color = LIS_NORMAL_NAME;
 }

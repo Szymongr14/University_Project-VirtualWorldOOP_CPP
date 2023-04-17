@@ -8,6 +8,7 @@ Jagody::Jagody(World *currentWorld, int positionX, int positionY)
     : Plant(currentWorld, positionX, positionY,JAGODY_STRENGTH) {
     skin = JAGODY_SKIN;
     name = JAGODY_NAME;
+    name_without_color = JAGODY_NORMAL_NAME;
 }
 
 void Jagody::Action() {

@@ -1,0 +1,29 @@
+20
+20
+11
+8
+3
+Zolw 2 1 0 0 81920
+Trawa 0 0 12 0 2048
+Wilk 9 5 4 1 18432
+Guarana 0 0 7 1 2
+Guarana 0 0 8 1 128
+Trawa 0 0 2 2 2048
+Trawa 0 0 3 2 256
+Guarana 0 0 8 2 2048
+Antylopa 4 4 16 3 14336
+Jagody 99 0 19 3 2048
+Czlowiek 8 4 2 5 40960
+Owca 4 4 8 5 8192
+Antylopa 4 4 12 9 14336
+Zolw 2 1 17 9 81920
+Wilk 9 5 10 11 18432
+Lis 3 7 11 13 14336
+Barszcz 10 0 8 16 2048
+Lis 3 7 9 16 14336
+Mlecz 0 0 0 18 8
+Mlecz 0 0 1 18 256
+Mlecz 0 0 2 18 32
+Mlecz 0 0 0 19 4
+Mlecz 0 0 1 19 2048
+Mlecz 0 0 2 19 4

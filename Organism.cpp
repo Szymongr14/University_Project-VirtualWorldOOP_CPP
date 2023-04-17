@@ -56,4 +56,32 @@ void Organism::setStrength(int strength_value) {
     this->strength = strength_value;
 }
 
+const std::string &Organism::getSkin() const {
+    return skin;
+}
+
+void Organism::setInitiative(int initiative) {
+    Organism::initiative = initiative;
+}
+
+void Organism::setSkin(const std::string &skin) {
+    Organism::skin = skin;
+}
+
+void Organism::setName(const std::string &name) {
+    Organism::name = name;
+}
+
+void Organism::setAge(int age) {
+    Organism::age = age;
+}
+
+const std::string &Organism::getNameWithoutColor() const {
+    return name_without_color;
+}
+
+void Organism::setNameWithoutColor(const std::string &nameWithoutColor) {
+    name_without_color = nameWithoutColor;
+}
+
 

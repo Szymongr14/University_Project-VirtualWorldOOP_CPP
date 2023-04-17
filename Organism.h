@@ -12,6 +12,7 @@ protected:
     int position[2];                        // Pozycja X oraz Y
     std::string skin;                              // Znak reprezentujący organizm na planszy
     std::string name;                       // Nazwa organizmu
+    std::string name_without_color;         // Nazwa organizmu bez koloru
     int age{};                                // Wiek organizmu, ustalany z góry w konstruktorze
     bool isAlive = true;                      // Czy organizm żyje
 public:
@@ -29,6 +30,20 @@ public:
     void setIsAlive(bool isAlive);
 
     bool getIsAlive() const;
+
+    const std::string &getNameWithoutColor() const;
+
+    void setNameWithoutColor(const std::string &nameWithoutColor);
+
+    const std::string &getSkin() const;
+
+    void setInitiative(int initiative);
+
+    void setSkin(const std::string &skin);
+
+    void setName(const std::string &name);
+
+    void setAge(int age);
 
     int getX();
     int getY();

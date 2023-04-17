@@ -10,10 +10,9 @@
 
 
 class Czlowiek : public Animal{
-private:
-        int abilityTime = 0;
 public:
     Czlowiek(World *currentWorld, int positionX, int positionY, int age);
+    Czlowiek(World *currentWorld, int initative, int strength, int positionX, int positionY, int age);
     void Action() override;
     void Collision(Organism *otherOrganism) override;
     Organism * clone()override{ return nullptr; };

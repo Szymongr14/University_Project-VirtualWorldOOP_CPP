@@ -18,12 +18,31 @@ void initalizeNewWorld() {
         system("cls");
         nowySwiat.drawWorld();
         nowySwiat.makeTurn();
-        //aby przejsc dalej kliknij enter
         std::cout<<std::endl;
         system("echo Nacisnij Enter, aby przejsc do nastepnej tury... & pause > null");
     }
     system("cls");
     nowySwiat.drawWorld();
+    cout <<endl<< "\033[31mKoniec gry - czlowiek nie zyje\033[0m" << endl;
+    system("echo Nacisnij Enter, aby przejsc do menu... & pause > null");
+}
+
+
+void loadGame(){
+    char fileName[100];
+    cout<<("Podaj nazwe pliku: ");
+    cin>>fileName;
+    system("cls");
+    World wczytanySwiat(fileName);
+    while (wczytanySwiat.getGameStatus()) {
+        system("cls");
+        wczytanySwiat.drawWorld();
+        wczytanySwiat.makeTurn();
+        std::cout<<std::endl;
+        system("echo Nacisnij Enter, aby przejsc do nastepnej tury... & pause > null");
+    }
+    system("cls");
+    wczytanySwiat.drawWorld();
     cout <<endl<< "\033[31mKoniec gry - czlowiek nie zyje\033[0m" << endl;
     system("echo Nacisnij Enter, aby przejsc do menu... & pause > null");
 }
@@ -51,6 +70,7 @@ int main() {
                 initalizeNewWorld();
                 break;
             case 'l':
+                loadGame();
                 break;
         }
     } while (zn != 'q');

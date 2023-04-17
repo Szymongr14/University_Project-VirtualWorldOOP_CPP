@@ -10,6 +10,7 @@
 class Lis :public Animal{
 public:
     Lis(World *currentWorld, int positionX, int positionY, int age);
+    Lis(World *currentWorld, int initative, int strength, int positionX, int positionY, int age);
     void Action() override;
     void Collision(Organism *otherOrganism) override;
     Organism *clone() override;

@@ -27,7 +27,7 @@ void Animal::Action() {
                 currentWorld->getOrganism(tempPosition[0],tempPosition[1])->Collision(this);
         }
         else {
-            std::cout<<"Ruch zwierzecia: "<<this->getName() << std::endl;
+            //std::cout<<"Ruch zwierzecia: "<<this->getName() << std::endl;
             currentWorld->moveOrganism(this, tempPosition[0], tempPosition[1]);
         }
     }

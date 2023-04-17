@@ -8,6 +8,14 @@ Zolw::Zolw(World *currentWorld, int positionX, int positionY, int age)
     : Animal(currentWorld, ZOLW_STRENGTH, ZOLW_INITIATIVE, positionX, positionY, age) {
     skin = ZOLW_SKIN;
     name = ZOLW_NAME;
+    name_without_color = ZOLW_NORMAL_NAME;
+}
+
+Zolw::Zolw(World *currentWorld, int initative, int strength, int positionX, int positionY, int age)
+    : Animal(currentWorld, strength, initative, positionX, positionY, age) {
+    skin = ZOLW_SKIN;
+    name = ZOLW_NAME;
+    name_without_color = ZOLW_NORMAL_NAME;
 }
 
 void Zolw::Action() {

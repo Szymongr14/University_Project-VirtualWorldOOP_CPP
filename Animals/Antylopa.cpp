@@ -9,6 +9,7 @@ Antylopa::Antylopa(World *currentWorld, int positionX, int positionY, int age)
     : Animal(currentWorld, ANTYLOPA_STRENGTH, ANTYLOPA_INITIATIVE, positionX, positionY, age) {
     skin = ANTYLOPA_SKIN;
     name = ANTYLOPA_NAME;
+    name_without_color = ANTYLOPA_NORMAL_NAME;
 }
 
 void Antylopa::Action() {
@@ -121,5 +122,12 @@ void Antylopa::Collision(Organism *otherOrganism) {
 
 Organism *Antylopa::clone() {
     return new Antylopa(currentWorld, this->getX(), this->getY(), 1);
+}
+
+Antylopa::Antylopa(World *currentWorld, int initative, int strength, int positionX, int positionY, int age)
+    : Animal(currentWorld, strength, initative, positionX, positionY, age) {
+    skin = ANTYLOPA_SKIN;
+    name = ANTYLOPA_NAME;
+    name_without_color = ANTYLOPA_NORMAL_NAME;
 }
 

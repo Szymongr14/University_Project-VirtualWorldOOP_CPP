@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/untitled.dir/Animals/Animal.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Animal.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Animals/Antylopa.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Antylopa.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Animals/Czlowiek.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Czlowiek.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Animals/Lis.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Lis.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Animals/Owca.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Owca.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Animals/Wilk.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Wilk.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Animals/Zolw.cpp.obj"
+  "CMakeFiles/untitled.dir/Animals/Zolw.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Organism.cpp.obj"
+  "CMakeFiles/untitled.dir/Organism.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Plants/Barszcz.cpp.obj"
+  "CMakeFiles/untitled.dir/Plants/Barszcz.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Plants/Guarana.cpp.obj"
+  "CMakeFiles/untitled.dir/Plants/Guarana.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Plants/Jagody.cpp.obj"
+  "CMakeFiles/untitled.dir/Plants/Jagody.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Plants/Mlecz.cpp.obj"
+  "CMakeFiles/untitled.dir/Plants/Mlecz.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Plants/Plant.cpp.obj"
+  "CMakeFiles/untitled.dir/Plants/Plant.cpp.obj.d"
+  "CMakeFiles/untitled.dir/Plants/Trawa.cpp.obj"
+  "CMakeFiles/untitled.dir/Plants/Trawa.cpp.obj.d"
+  "CMakeFiles/untitled.dir/World.cpp.obj"
+  "CMakeFiles/untitled.dir/World.cpp.obj.d"
+  "CMakeFiles/untitled.dir/main.cpp.obj"
+  "CMakeFiles/untitled.dir/main.cpp.obj.d"
+  "libuntitled.dll.a"
+  "untitled.exe"
+  "untitled.exe.manifest"
+  "untitled.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/untitled.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

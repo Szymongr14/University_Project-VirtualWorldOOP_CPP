@@ -8,6 +8,7 @@ Mlecz::Mlecz(World *currentWorld, int positionX, int positionY)
     : Plant(currentWorld, positionX, positionY,MLECZ_STRENGTH) {
     skin = MLECZ_SKIN;
     name = MLECZ_NAME;
+    name_without_color = MLECZ_NORMAL_NAME;
 }
 
 void Mlecz::Action() {
