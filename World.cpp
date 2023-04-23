@@ -141,9 +141,9 @@ bool World::isPositionEmptyAndValid(int x, int y) {
 void World::drawWorld() {
     //displaying legend of the board
     std::cout << "                                   \033[35mLegenda\033[0m: " << std::endl;
-    std::cout << "[C - Czlowiek] , [A - Antylopa], [L - Lis], [W - Wilk], [Z- Zolw], [O - Owca] " << std::endl;
-    std::cout<< "[T - Trawa], [M - Mlecz], [G - Guarana], [B - Barszcz Sosnowskiego], [J - Jagody]" << std::endl;
-    std::cout<<std::endl<< "          \033[35mSterowanie\033[0m: (w,s,a,d)      \033[35mAktywacja specjalnej umiejetnosci\033[0m: r" << std::endl;
+    std::cout << "    [C - Czlowiek] , [A - Antylopa], [L - Lis], [W - Wilk], [Z- Zolw], [O - Owca] " << std::endl;
+    std::cout << "    [T - Trawa], [M - Mlecz], [G - Guarana], [B - Barszcz Sosnowskiego], [J - Jagody]" << std::endl;
+    std::cout<<std::endl<< "  \033[35mSterowanie\033[0m: (w,s,a,d)      \033[35mAktywacja specjalnej umiejetnosci\033[0m: r         \033[35mZapis obecnej rozgrywki\033[0m: x" << std::endl;
     std::cout<<std::endl;
     std::cout << "Tura: " << this->turn<<std::endl;
     //displaying the board

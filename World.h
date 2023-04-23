@@ -18,6 +18,7 @@ private:
     std::vector<std::vector<std::string>> Board;
 public:
     World(int height, int width);
+
     //constructor for loading world from file
     World(const char * fileName);
 
@@ -47,7 +48,6 @@ public:
     bool isPositionEmptyAndValid(int x, int y);
     bool isPositionValid(int x, int y) const;
     void addOrganism(Organism *organism, int x, int y);
-
     void removeOrganism(Organism *organism);
     void moveOrganism(Organism *organism, int x, int y);
 
