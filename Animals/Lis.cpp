@@ -39,7 +39,7 @@ void Lis::Action() {
             //std::cout<<"Ruch zwierzecia: "<<this->getName() << std::endl;
             currentWorld->moveOrganism(this, tempPosition[0], tempPosition[1]);
         }
-    }
+    }   
 }
 
 void Lis::Collision(Organism *otherOrganism) {
